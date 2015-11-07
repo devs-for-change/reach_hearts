@@ -1,5 +1,5 @@
-# source 'https://rubygems.org'
-#
+source 'https://rubygems.org'
+
 gem 'locomotivecms_wagon', '2.0.0.rc2'
 #
 # group :development do
