@@ -1,0 +1,22 @@
+
+$standard-row-spacing: 40px;
+
+.pinnable {
+  margin: $standard-row-spacing 0;
+}
+
+.jagged-bottom-out-left {
+  margin: $standard-row-spacing 0;
+}
+
+.jagged-bottom-out-right {
+  margin: $standard-row-spacing 0;
+}
+
+.to-top-of-container {
+  margin-top: 0;
+}
+
+.row.margin-bottom {
+  margin: (.5 * $standard-row-spacing) 0;
+}
