@@ -1,12 +1,31 @@
 
+//theme
+
+
+
 $standard-row-spacing: 40px;
 
-.pinnable {
-  margin: $standard-row-spacing 0;
+.pinnable-area {
+  position: relative;
+  max-height: 457px;
+  border: 1px solid black;
+}
+
+.hero-outer {
+  height: 80vmin;
+}
+
+.hero-area {
+  margin: 0 -15px;
+  background-color: #D1D3D4;
+  height: 100%;
 }
 
 .jagged-bottom-out-left {
-  margin: $standard-row-spacing 0;
+  height: 10vw;
+  margin: 0 -15px;
+  background-image: url('/images/jagged-bottom-out-left.svg');
+  background-size: 100% 100%;
 }
 
 .jagged-bottom-out-right {
@@ -19,4 +38,19 @@ $standard-row-spacing: 40px;
 
 .row.margin-bottom {
   margin: (.5 * $standard-row-spacing) 0;
+}
+
+
+
+
+#content-sections {
+  .sections-text-area {
+    .section-text {
+      height: 457px;
+      display : table-cell;
+      vertical-align : middle;
+      float:none;
+      opacity: 0;
+    }
+  }
 }
