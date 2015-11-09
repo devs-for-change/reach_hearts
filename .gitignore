@@ -2,3 +2,4 @@ config/deploy.yml
 dragonfly.log
 log/*
 .sass-cache/*
+.DS_Store
