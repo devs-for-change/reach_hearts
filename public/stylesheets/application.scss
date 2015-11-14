@@ -46,11 +46,10 @@ $standard-row-spacing: 40px;
 #content-sections {
   .sections-text-area {
     .section-text {
-      height: 457px;
-      display : table-cell;
-      vertical-align : middle;
-      float:none;
+
       opacity: 0;
+      margin-top: 100vh;
+      margin-bottom: 50vh;
     }
   }
 }
