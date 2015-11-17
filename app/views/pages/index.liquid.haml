@@ -11,7 +11,7 @@ is_layout: false
   %body
     .container-fluid
       .hero-outer
-        .container-fluid.hero-area
+        .container-fluid.hero-area.accent-background
           .row
             .col-xs-12
               %h2.text-center Hero
@@ -22,7 +22,7 @@ is_layout: false
 
       .container#content-sections
         #sections-trigger
-        .row
+        .row.margin-bottom
           .col-md-6
             .pinnable-area
               %img.img-responsive{ src: 'https://placehold.it/560x457' }
@@ -40,16 +40,19 @@ is_layout: false
 
 
 
-      .container.bi-sectional-content-area
-        .row
-          .col-xs-12
-            %h2.text-center Bisectional Heading
-            %h3.text-center Bisectional Second Heading
-        .row
-          .col-xs-6.text-left
-            %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-          .col-xs-6.text-left
-            %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
+      .container-fluid.bi-sectional-content-area.accent-background
+        .container
+          .row
+            .col-xs-12
+              %h2.text-center Bisectional Heading
+              %h3.text-center Bisectional Second Heading
+          .row
+            .col-xs-6.text-left
+              %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
+            .col-xs-6.text-left
+              %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
+      .container-fluid
+        .jagged-bottom-out-right
       .container.tri-sectional-content-area
         .row.margin-bottom
           .col-xs-4

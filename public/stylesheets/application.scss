@@ -1,9 +1,42 @@
-
-//theme
-
-
-
 $standard-row-spacing: 40px;
+$accent-background-color: #d1d3d4;
+
+.hero-outer {
+  height: 80vmin;
+}
+
+.hero-area {
+  height: 100%;
+}
+
+// Remove outside margins
+.container-fluid {
+  margin: 0 -15px;
+}
+
+.accent-background {
+  background-color: $accent-background-color;
+}
+
+.jagged-bottom-common {
+  height: 10vw;
+  margin: 0 -15px;
+  background-size: 100% 100%;
+}
+
+.jagged-bottom-out-left {
+  @extend .jagged-bottom-common;
+  background-image: url('/images/jagged-bottom-out-left.svg');
+}
+
+.jagged-bottom-out-right {
+  @extend .jagged-bottom-common;
+  background-image: url('/images/jagged-bottom-out-right.svg');
+}
+
+.row.margin-bottom {
+  margin: (.5 * $standard-row-spacing) 0;
+}
 
 .pinnable-area {
   position: relative;
@@ -11,42 +44,9 @@ $standard-row-spacing: 40px;
   border: 1px solid black;
 }
 
-.hero-outer {
-  height: 80vmin;
-}
-
-.hero-area {
-  margin: 0 -15px;
-  background-color: #D1D3D4;
-  height: 100%;
-}
-
-.jagged-bottom-out-left {
-  height: 10vw;
-  margin: 0 -15px;
-  background-image: url('/images/jagged-bottom-out-left.svg');
-  background-size: 100% 100%;
-}
-
-.jagged-bottom-out-right {
-  margin: $standard-row-spacing 0;
-}
-
-.to-top-of-container {
-  margin-top: 0;
-}
-
-.row.margin-bottom {
-  margin: (.5 * $standard-row-spacing) 0;
-}
-
-
-
-
 #content-sections {
   .sections-text-area {
     .section-text {
-
       opacity: 0;
       margin-top: 100vh;
       margin-bottom: 50vh;
