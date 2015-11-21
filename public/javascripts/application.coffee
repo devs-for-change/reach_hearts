@@ -1,5 +1,5 @@
 $ ->
-  if screen.width < 992
+  if screen.width > 991
     # This defines the fade and pin effect for the template.
     #  Pin the main area, including the first image to roughly middle
     #  Fade in the areas, pinning when they reach 100% opacity.
