@@ -73,3 +73,20 @@ $accent-background-color: #d1d3d4;
     }
   }
 }
+
+@media (max-width: 991px) {
+  .sections-text-area {
+    .show-mobile {
+      opacity: 1 !important;
+
+      img {
+        padding-bottom: 2vh;
+      }
+    }
+
+    .section-text {
+      margin-top: 10vh !important;
+      margin-bottom: 10vh !important;
+    }
+  }
+}

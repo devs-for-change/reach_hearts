@@ -19,20 +19,26 @@ is_layout: false
 
       .container#content-sections
         #sections-trigger
-        .row.margin-bottom.hide-in-small-view
-          .col-md-6.hide-in-small-view
+        .row.margin-bottom
+          .col-md-6.hide-in-small-view.hidden-sm.hidden-xs
             .pinnable-area
               %img.img-responsive{ src: 'https://placehold.it/560x457' }
           .col-md-6.sections-text-area
             .row
               .col-xs-12
-                #section-text-1.section-text
+                #section-text-1.section-text.show-mobile
+                  .hidden-md.hidden-lg
+                    %img.center-block.img-responsive{ src: 'https://placehold.it/360x360' }
                   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                #section-text-2.section-text
+                #section-text-2.section-text.show-mobile
+                  .hidden-md.hidden-lg
+                    %img.center-block.img-responsive{ src: 'https://placehold.it/360x360' }
                   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                #section-text-3.section-text
+                #section-text-3.section-text.show-mobile
+                  .hidden-md.hidden-lg
+                    %img.center-block.img-responsive{ src: 'https://placehold.it/360x360' }
                   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                #section-text-4.section-text
+                #section-text-4.section-text.show-mobile
                   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
