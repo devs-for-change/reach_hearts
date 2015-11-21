@@ -18,19 +18,29 @@ $accent-background-color: #d1d3d4;
   background-color: $accent-background-color;
 }
 
-.jagged-bottom-common {
+.jagged-common {
   height: 10vw;
   margin: 0 -15px;
   background-size: 100% 100%;
 }
 
 .jagged-bottom-out-left {
-  @extend .jagged-bottom-common;
+  @extend .jagged-common;
   background-image: url('/images/jagged-bottom-out-left.svg');
 }
 
+.jagged-top-in-left {
+  @extend .jagged-common;
+  background-image: url('/images/jagged-top-in-left.svg');
+}
+
+.jagged-top-in-right {
+  @extend .jagged-common;
+  background-image: url('/images/jagged-top-in-right.svg');
+}
+
 .jagged-bottom-out-right {
-  @extend .jagged-bottom-common;
+  @extend .jagged-common;
   background-image: url('/images/jagged-bottom-out-right.svg');
 }
 
