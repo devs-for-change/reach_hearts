@@ -1,6 +1,15 @@
 $standard-row-spacing: 40px;
 $accent-background-color: #d1d3d4;
 
+.navbar-center .navbar-inner {
+  text-align: center;
+}
+
+.navbar-center .navbar-inner .nav {
+  display: inline-block;
+  float: none;
+}
+
 .hero-outer {
   height: 80vmin;
 }
