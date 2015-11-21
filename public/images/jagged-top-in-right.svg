@@ -5,10 +5,10 @@
 	 preserveAspectRatio="none">
 <style type="text/css">
 <![CDATA[
-	.jagged-bottom-out-right {
+	.jagged-top-in-right {
 		fill: #D1D3D4;
 	}
 ]]>
 </style>
-<polyline class="jagged-bottom-out-right" points="80,100 0,0 100,0 "/>
+<polyline class="jagged-top-in-right" points="0,0 80,100 100,0 100,100 0,100"/>
 </svg>
