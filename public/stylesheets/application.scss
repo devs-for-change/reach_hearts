@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Nunito', sans-serif;
+  position: relative; //for scrollspy
 }
 $standard-row-spacing: 40px;
 $accent-background-color: #d1d3d4;
@@ -37,6 +38,9 @@ $blue: #00a9ba;
     color: $red !important;
     background: transparent;
     text-transform: uppercase;
+  }
+  a.active {
+    color: blue !important;
   }
   li {
     padding-right: 40px;

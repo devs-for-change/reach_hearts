@@ -15,6 +15,9 @@ $ ->
         id = $element.attr('id') # Fade tween target ID, text area target.
         trigger_id = "trigger-#{id}" # The trigger ID for fade/pin
 
+        $menu_target = $(".nav > li > a[href=\"##{id}\"]")
+        $entire_menu = $(".nav > li > a")
+
         section_height = $element.height()
         section_margin_top = parseInt($element.css('margin-top').replace('px',''))
         section_margin_bottom = parseInt($element.css('margin-bottom').replace('px',''))
@@ -47,6 +50,13 @@ $ ->
             .setPin("##{id}")
             .addTo(controller)
 
+        scroll_spy = new (ScrollMagic.Scene)(triggerElement: "##{trigger_id}", duration: (pin_hold_duration + fade_duration*2))
+          .on 'enter', ->
+            $entire_menu.each ->
+              $(this).removeClass('active')
+            $menu_target.addClass('active')
+          .addTo(controller)
+
         image_swap = new (ScrollMagic.Scene)(
           triggerElement: "##{trigger_id}"
           offset: content_hold_offset
@@ -75,12 +85,21 @@ $ ->
         offset: '200%'
         duration: main_pinnable_area_duration)
           .setPin('.pinnable-area')
-          .on 'enter', ->
+          .on 'enter', (e) ->
             set_nav_logo_opacity_to(1)
           .on 'leave', (e) -> # Only run this if we're leaving to go to the top.
             if e.state == 'BEFORE'
               set_nav_logo_opacity_to(0)
           .addIndicators(name: "MAIN PIN")
+          .addTo(controller)
+
+      # Set up scroll spy for other areas
+      $.each ['#contact', '#top'], (ele, id) ->
+        contact_scroll_spy = new (ScrollMagic.Scene)(triggerElement: "#{id}")
+          .on 'enter', ->
+            $(".nav > li > a").each ->
+              $(this).removeClass('active')
+            $("li > a[href=\"#{id}\"]").addClass('active')
           .addTo(controller)
 
   swap_scene_image_in = ($element) ->

@@ -9,14 +9,13 @@ is_layout: false
 %html
   {% include head %}
   %body
-    #top
     {% include navbar %}
-    .container-fluid
+    #top.container-fluid
       #hero.hero-outer
         .container-fluid.hero-area.accent-background
           .row
             .col-xs-12.hero-contents
-              %img.center-block.img-responsive{ src: '/images/reach-hearts-logo.svg' }
+              %img.center-block.img-responsive{ src: "{{ 'reach-hearts-logo.svg' | theme_image_url }}" }
       .jagged-bottom-out-left
 
       .container#content-sections
@@ -30,13 +29,13 @@ is_layout: false
               .col-xs-12
                 #about-us.section-text.show-mobile
                   .hidden-md.hidden-lg
-                    %img.center-block.section-image.img-responsive{ src: '/images/icons/about-us-icon.svg' }
+                    %img.center-block.section-image.img-responsive{ src: "{{ 'icons/about-us-icon.svg' | theme_image_url }}" }
                   %h2 About Us
                   %h3 Reach Hearts is Building Community
                   %p At Reach Hearts, we believe in the power of big data and the strength of new media, and we leverage both to help nonprofits reach more people. The idea for Reach Hearts came from noticing that non-profits were having difficulty navigating the New Media landscape and figuring out how best to leverage Big Data. This is a chance to give back, make a difference, and motivate others to join in.
                 #new-media.section-text.show-mobile
                   .hidden-md.hidden-lg
-                    %img.center-block.section-image.img-responsive{ src: '/images/icons/new-media-icon.svg' }
+                    %img.center-block.section-image.img-responsive{ src: "{{ 'icons/new-media-icon.svg' | theme_image_url }}" }
                   %h2 New Media
                   %h3 Bridging the Gap Between You and Good Causes
                   %p Reach Hearts helps you spend less time looking for ways to make difference and more time making the difference.
@@ -44,7 +43,7 @@ is_layout: false
                   %p We know that at times half the battle of offering pro bono services is finding that right nonprofit to work with. And when you are already donating time, who wants to waste time finding the right place to donate? Join Reach Hearts and let us match you up with a non- profit that has big data needs and then we will match you up to one of our new media connections to round out the promotional opportunities for the nonprofits that come through our door.
                 #big-data.section-text.show-mobile
                   .hidden-md.hidden-lg
-                    %img.center-block.section-image.img-responsive{ src: '/images/icons/big-data-icon.svg' }
+                    %img.center-block.section-image.img-responsive{ src: "{{ 'icons/big-data-icon.svg' | theme_image_url }}" }
                   %h2 Big Data
                   %h3 There's Power in Numbers
                   %p Make meaningful and measurable connections to the nonprofit sector with Reach Hearts
@@ -79,10 +78,10 @@ is_layout: false
       -#       %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
       -#       %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
 
-      .container-fluid
+      #contact.container-fluid
         .jagged-top-in-left
         .accent-background
-          #contact.container.form-area
+          .container.form-area
             .row
               .col-xs-12.col-md-5
                 %h2.form-introduction-text Let's get in touch
