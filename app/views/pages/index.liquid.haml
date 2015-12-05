@@ -9,12 +9,14 @@ is_layout: false
 %html
   {% include head %}
   %body
+    #top
     {% include navbar %}
     .container-fluid
-      .hero-outer
+      #hero.hero-outer
         .container-fluid.hero-area.accent-background
           .row
-            .col-xs-12
+            .col-xs-12.hero-contents
+              %img.center-block.img-responsive{ src: '/images/reach-hearts-logo.svg' }
       .jagged-bottom-out-left
 
       .container#content-sections
@@ -22,59 +24,70 @@ is_layout: false
         .row.margin-bottom
           .col-md-6.hide-in-small-view.hidden-sm.hidden-xs
             .pinnable-area
-              %img.img-responsive{ src: 'https://placehold.it/560x457' }
+              %img.section-image-target.img-responsive{ src: nil }
           .col-md-6.sections-text-area
             .row
               .col-xs-12
-                #section-text-1.section-text.show-mobile
+                #about-us.section-text.show-mobile
                   .hidden-md.hidden-lg
-                    %img.center-block.img-responsive{ src: 'https://placehold.it/360x360' }
-                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                #section-text-2.section-text.show-mobile
+                    %img.center-block.section-image.img-responsive{ src: '/images/icons/about-us-icon.svg' }
+                  %h2 About Us
+                  %h3 Reach Hearts is Building Community
+                  %p At Reach Hearts, we believe in the power of big data and the strength of new media, and we leverage both to help nonprofits reach more people. The idea for Reach Hearts came from noticing that non-profits were having difficulty navigating the New Media landscape and figuring out how best to leverage Big Data. This is a chance to give back, make a difference, and motivate others to join in.
+                #new-media.section-text.show-mobile
                   .hidden-md.hidden-lg
-                    %img.center-block.img-responsive{ src: 'https://placehold.it/360x360' }
-                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                #section-text-3.section-text.show-mobile
+                    %img.center-block.section-image.img-responsive{ src: '/images/icons/new-media-icon.svg' }
+                  %h2 New Media
+                  %h3 Bridging the Gap Between You and Good Causes
+                  %p Reach Hearts helps you spend less time looking for ways to make difference and more time making the difference.
+                  %p Along with giving your business positive free press and the free promotion associated with good PR, working with Reach Hearts will also make you feel good, know- ing that you are donating your time and expertise to a good cause.
+                  %p We know that at times half the battle of offering pro bono services is finding that right nonprofit to work with. And when you are already donating time, who wants to waste time finding the right place to donate? Join Reach Hearts and let us match you up with a non- profit that has big data needs and then we will match you up to one of our new media connections to round out the promotional opportunities for the nonprofits that come through our door.
+                #big-data.section-text.show-mobile
                   .hidden-md.hidden-lg
-                    %img.center-block.img-responsive{ src: 'https://placehold.it/360x360' }
-                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                #section-text-4.section-text.show-mobile
-                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    %img.center-block.section-image.img-responsive{ src: '/images/icons/big-data-icon.svg' }
+                  %h2 Big Data
+                  %h3 There's Power in Numbers
+                  %p Make meaningful and measurable connections to the nonprofit sector with Reach Hearts
+                  %p Along with giving your business positive free press and the free promotion associated with good PR, working with Reach Hearts will also make you feel good, know- ing that you are donating your time and expertise to a good cause.
+                  %p We know that at times half the battle of offering pro bono services is finding that right nonprofit to work with. And when you are already donating time, who wants to waste time finding the right place to donate? Join Reach Hearts and let us match you up with a non- profit that has big data needs and then we will match you up to one of our new media connections to round out the promotional opportunities for the nonprofits that come through our door.
 
 
-
-      .container-fluid.bi-sectional-content-area
-        .jagged-top-in-right
-        .accent-background
-          .container
-            .row
-              .col-xs-12
-                %h2.text-center Bisectional Heading
-                %h3.text-center Bisectional Second Heading
-            .row
-              .col-xs-6.text-left
-                %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-              .col-xs-6.text-left
-                %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-      .container-fluid
-        .jagged-bottom-out-right
-      .container.tri-sectional-content-area
-        .row.margin-bottom
-          .col-xs-12.col-md-4
-            %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
-            %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-          .col-xs-12.col-md-4
-            %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
-            %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-          .col-xs-12.col-md-4
-            %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
-            %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
+      -# .container-fluid.bi-sectional-content-area
+      -#   .jagged-top-in-right
+      -#   .accent-background
+      -#     .container
+      -#       .row
+      -#         .col-xs-12
+      -#           %h2.text-center More information
+      -#           %h3.text-center Bisectional Second Heading
+      -#       .row
+      -#         .col-xs-6.text-left
+      -#           %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
+      -#         .col-xs-6.text-left
+      -#           %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
+      -# .container-fluid
+      -#   .jagged-bottom-out-right
+      -# .container.tri-sectional-content-area
+      -#   .row.margin-bottom
+      -#     .col-xs-12.col-md-4
+      -#       %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
+      -#       %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
+      -#     .col-xs-12.col-md-4
+      -#       %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
+      -#       %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
+      -#     .col-xs-12.col-md-4
+      -#       %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
+      -#       %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
 
       .container-fluid
         .jagged-top-in-left
         .accent-background
-          .container.form-area
-            %h2 form
-        .jagged-bottom-out-left
+          #contact.container.form-area
+            .row
+              .col-xs-12.col-md-6
+                %h2 Let's get in touch
+              .col-xs-12.col-md-6
+                {% include contact-form %}
+        .jagged-bottom-out-left.dark-background
 
   {% include javascripts %}
