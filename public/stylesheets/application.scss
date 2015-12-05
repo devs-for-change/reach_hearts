@@ -36,22 +36,22 @@ $accent-background-color: #d1d3d4;
 
 .jagged-bottom-out-left {
   @extend .jagged-common;
-  background-image: url('/images/jagged-bottom-out-left.svg');
+  background-image: url('../images/jagged-bottom-out-left.svg');
 }
 
 .jagged-top-in-left {
   @extend .jagged-common;
-  background-image: url('/images/jagged-top-in-left.svg');
+  background-image: url('../images/jagged-top-in-left.svg');
 }
 
 .jagged-top-in-right {
   @extend .jagged-common;
-  background-image: url('/images/jagged-top-in-right.svg');
+  background-image: url('../images/jagged-top-in-right.svg');
 }
 
 .jagged-bottom-out-right {
   @extend .jagged-common;
-  background-image: url('/images/jagged-bottom-out-right.svg');
+  background-image: url('../images/jagged-bottom-out-right.svg');
 }
 
 .row.margin-bottom {
