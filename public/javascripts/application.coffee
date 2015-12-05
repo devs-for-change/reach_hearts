@@ -73,7 +73,15 @@ $ ->
       pinnable_area = new (ScrollMagic.Scene)(
         triggerElement: '#sections-trigger'
         offset: '200%'
-        duration: main_pinnable_area_duration).setPin('.pinnable-area').addIndicators(name: "MAIN PIN").addTo(controller)
+        duration: main_pinnable_area_duration)
+          .setPin('.pinnable-area')
+          .on 'enter', ->
+            set_nav_logo_opacity_to(1)
+          .on 'leave', (e) -> # Only run this if we're leaving to go to the top.
+            if e.state == 'BEFORE'
+              set_nav_logo_opacity_to(0)
+          .addIndicators(name: "MAIN PIN")
+          .addTo(controller)
 
   swap_scene_image_in = ($element) ->
     $target = $('.section-image-target')
@@ -89,7 +97,11 @@ $ ->
     $target = $('.section-image-target')
     $target.stop().hide()
 
+  set_nav_logo_opacity_to = (value) ->
+    $target = $('#nav-logo')
+    $target.animate({ opacity: value })
 
+  #now, initialize everything, and set up a resize reloader.
   setup_scroll_effect()
   $(window).resize ->
     location.reload()
