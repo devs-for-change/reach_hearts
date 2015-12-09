@@ -2,8 +2,8 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  position: relative; //for scrollspy
 }
+
 $standard-row-spacing: 40px;
 $accent-background-color: #d1d3d4;
 $dark-gray: #312d2e;
@@ -140,18 +140,28 @@ $blue: #00a9ba;
   .scene-image {
     opacity: 1;
   }
+
+  .hero-contents {
+    @media (orientation: portrait) {
+      padding-top: 40vw;
+    }
+    @media (orientation: landscape) {
+      padding-top: 20vw;
+    }
+  }
+
   .sections-text-area {
     .show-mobile {
       opacity: 1 !important;
 
       img {
-        padding-bottom: 2vh;
+        padding-bottom: 2vw;
       }
     }
 
     .section-text {
-      margin-top: 10vh !important;
-      margin-bottom: 10vh !important;
+      margin-top: 10vw !important;
+      margin-bottom: 10vw !important;
     }
   }
 }
