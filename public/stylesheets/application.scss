@@ -40,7 +40,7 @@ $blue: #00a9ba;
     text-transform: uppercase;
   }
   a.active {
-    color: blue !important;
+    text-decoration: underline;
   }
   li {
     padding-right: 40px;
@@ -76,22 +76,22 @@ $blue: #00a9ba;
 
 .jagged-bottom-out-left {
   @extend .jagged-common;
-  background-image: url('/images/jagged-bottom-out-left.svg');
+  background-image: url('../images/jagged-bottom-out-left.svg');
 }
 
 .jagged-top-in-left {
   @extend .jagged-common;
-  background-image: url('/images/jagged-top-in-left.svg');
+  background-image: url('../images/jagged-top-in-left.svg');
 }
 
 .jagged-top-in-right {
   @extend .jagged-common;
-  background-image: url('/images/jagged-top-in-right.svg');
+  background-image: url('../images/jagged-top-in-right.svg');
 }
 
 .jagged-bottom-out-right {
   @extend .jagged-common;
-  background-image: url('/images/jagged-bottom-out-right.svg');
+  background-image: url('../images/jagged-bottom-out-right.svg');
 }
 
 .dark-background {

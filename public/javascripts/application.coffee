@@ -95,11 +95,14 @@ $ ->
 
       # Set up scroll spy for other areas
       $.each ['#contact', '#top'], (ele, id) ->
-        contact_scroll_spy = new (ScrollMagic.Scene)(triggerElement: "#{id}")
+        duration = $(id).height()
+        contact_scroll_spy = new (ScrollMagic.Scene)(triggerElement: "#{id}", duration: duration)
           .on 'enter', ->
             $(".nav > li > a").each ->
               $(this).removeClass('active')
             $("li > a[href=\"#{id}\"]").addClass('active')
+            console.log(id)
+          .addIndicators(name: "SCROLLSPY #{id}")
           .addTo(controller)
 
   swap_scene_image_in = ($element) ->
