@@ -126,4 +126,7 @@ $ ->
   #now, initialize everything, and set up a resize reloader.
   setup_scroll_effect()
   $(window).resize ->
-    location.reload()
+    width = $(window).width()
+    height = $(window).height()
+    if($(window).width() != width && $(window).height() != height)
+      location.reload()
