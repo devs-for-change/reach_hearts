@@ -7,12 +7,21 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "#"} Brand
+      / %a.navbar-brand{:href => "#"} Brand
     / Collect the nav links, forms, and other content for toggling
     #navbar-collapse.collapse.navbar-collapse
       .navbar-inner
         %ul.nav.navbar-nav{style: 'text-align: center;'}
           %li
-            %a{:href => "#"} Link
+            %a.scrollspyable#nav-logo{ :href => "#top" }
+              %img.img-responsive{ src: "{{ 'icons/reach-hearts-icon.svg' | theme_image_url }}" }
           %li
-            %a{:href => "#"} Link
+            %a.scrollspyable{ :href => "#top" } Home
+          %li
+            %a.scrollspyable{ :href => "#about-us" } About Us
+          %li
+            %a.scrollspyable{ :href => "#new-media" } New Media
+          %li
+            %a.scrollspyable{ :href => "#big-data" } Big Data
+          %li
+            %a.scrollspyable{ :href => "#contact" } Contact
