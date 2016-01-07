@@ -10,18 +10,17 @@ is_layout: false
   {% include head %}
   %body
     {% include navbar %}
-    #top.container-fluid
-      #hero.hero-outer
-        .container-fluid.hero-area.accent-background
-          .row
-            .col-xs-12.hero-contents
-              %img.center-block.img-responsive{ src: "{{ 'reach-hearts-logo.svg' | theme_image_url }}" }
-      .jagged-bottom-out-left
-
+    .main-container
+      #top
+        #hero.hero-outer
+          .hero-area.accent-background.reach-hearts-logo-background
+            .reach-hearts-logo-container
+              %img.center-block{ src: "{{ 'reach-hearts-logo.svg' | theme_image_url }}", alt: "Reach Hearts" }
+          .jagged-bottom-out-left
       .container#content-sections
         #sections-trigger
         .row.margin-bottom
-          .col-md-6.hide-in-small-view.hidden-sm.hidden-xs
+          .col-md-6
             .pinnable-area
               %img.section-image-target.img-responsive{ src: nil }
           .col-md-6.sections-text-area
@@ -55,36 +54,7 @@ is_layout: false
                       %p Make meaningful and measurable connections to the nonprofit sector with Reach Hearts
                       %p Along with giving your business positive free press and the free promotion associated with good PR, working with Reach Hearts will also make you feel good, know- ing that you are donating your time and expertise to a good cause.
                       %p We know that at times half the battle of offering pro bono services is finding that right nonprofit to work with. And when you are already donating time, who wants to waste time finding the right place to donate? Join Reach Hearts and let us match you up with a non- profit that has big data needs and then we will match you up to one of our new media connections to round out the promotional opportunities for the nonprofits that come through our door.
-
-
-      -# .container-fluid.bi-sectional-content-area
-      -#   .jagged-top-in-right
-      -#   .accent-background
-      -#     .container
-      -#       .row
-      -#         .col-xs-12
-      -#           %h2.text-center More information
-      -#           %h3.text-center Bisectional Second Heading
-      -#       .row
-      -#         .col-xs-6.text-left
-      -#           %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-      -#         .col-xs-6.text-left
-      -#           %p Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-      -# .container-fluid
-      -#   .jagged-bottom-out-right
-      -# .container.tri-sectional-content-area
-      -#   .row.margin-bottom
-      -#     .col-xs-12.col-md-4
-      -#       %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
-      -#       %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-      -#     .col-xs-12.col-md-4
-      -#       %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
-      -#       %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-      -#     .col-xs-12.col-md-4
-      -#       %img.center-block.img-circle{ src: 'https://placehold.it/152x152' }
-      -#       %p.text-left Sed option torquatos ne, duo sint movet eripuit no, nobis iracundia qui an. Tota latine adipisci pro eu, id vim labore semper nostrud, ad hinc reprehendunt mea. Te nam amet prodesset, at vim mundi suscipit legendos, ut sit integre molestie. No quo albucius deseruisse definitionem, ex dolore expetenda vis, id his tantas numquam. Zril dignissim nec no, usu dicam pertinacia in.
-
-      #contact.container-fluid
+      #contact
         .jagged-top-in-left
         .accent-background
           .container.form-area

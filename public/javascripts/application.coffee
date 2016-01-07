@@ -7,7 +7,7 @@ $ ->
       #  Pin the areas for pin_hold_duration
       #  After pin_hold_duration expires, fade back out, and repeat on next section.
 
-      controller = new ScrollMagic.Controller({addIndicators: true})
+      controller = new ScrollMagic.Controller()
 
       $('.sections-text-area .section-text').each ->
         $element = $(this)
@@ -29,7 +29,7 @@ $ ->
         fade_duration = 400 # Magic number.  Should be a percentage of VH?
         pin_hold_duration = 1500 # Magic number, completely arbitrary.
 
-        content_in_offset = pin_offset - fade_duration
+        content_in_offset = 500
         content_hold_offset = pin_offset
         content_out_offset = pin_offset + pin_hold_duration
 
@@ -101,7 +101,6 @@ $ ->
             $(".nav > li > a").each ->
               $(this).removeClass('active')
             $("li > a[href=\"#{id}\"]").addClass('active')
-            console.log(id)
           .addIndicators(name: "SCROLLSPY #{id}")
           .addTo(controller)
 
@@ -126,9 +125,5 @@ $ ->
   #now, initialize everything, and set up a resize reloader.
   setup_scroll_effect()
 
-  width = $(window).width()
-  height = $(window).height()
-
-  $(window).resize ->
-    if($(window).width() != width && $(window).height() != height)
-      location.reload()
+  $(".navbar").on "click", "a", ->
+    $(".navbar-toggle").click()

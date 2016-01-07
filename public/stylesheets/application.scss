@@ -1,50 +1,73 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito:400,700);
+@import "variables.scss";
+@import "form.scss";
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Muli', sans-serif;
+  font-size: 12px;
 }
 
-$standard-row-spacing: 40px;
-$accent-background-color: #d1d3d4;
-$dark-gray: #312d2e;
-$red: #e44739;
-$blue: #00a9ba;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
 
-// Based on http://jsbin.com/IfUBAYi/1/edit?html,css,output
-.navbar-center {
-  height: 100px;
-  background-color: $dark-gray;
+h1, h2 {
+  color: $blue;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h3, h4, h5, h6 {
+  color: $red;
+  font-weight: normal;
 }
 
 #nav-logo {
   opacity: 0;
-  img {
-    margin-top: -10px;
-    height: 50px !important;
-  }
-
-}
-
-.navbar-center .navbar-inner {
-  text-align: center;
-  padding-top: 20px;
-}
-
-.navbar-center .navbar-inner .nav {
+  padding: 0;
   display: inline-block;
-  float: none;
-  font-size: 25px;
-  a, a:hover, a:visited, a:focus {
-    color: $red !important;
-    background: transparent;
-    text-transform: uppercase;
+  img {
+    margin-top: -3px;
+    height: 65px;
   }
-  a.active {
-    text-decoration: underline;
+}
+
+.navbar-center {
+  text-align: center;
+  padding: 30px 0;
+  height: $navbar-height;
+  background-color: $dark-gray;
+  .navbar-inner {
+    .nav {
+      display: inline-block;
+      float: none;
+      font-size: 18px;
+      font-family: 'Muli', sans-serif;
+      a, a:hover, a:visited {
+        color: $red;
+        background: transparent;
+        text-transform: uppercase;
+        &.active {
+          color: white;
+          text-decoration: none;
+        }
+      }
+      li {
+        padding-right: 40px;
+        vertical-align: middle;
+      }
+    }
   }
-  li {
-    padding-right: 40px;
-  }
+}
+
+.main-container {
+  // padding-top: $navbar-height;
+}
+
+.accent-background {
+  padding-top: $navbar-height;
+  background: $accent-background-color;
+  height: 100%;
+  width: 100%;
 }
 
 .hero-outer {
@@ -59,18 +82,52 @@ $blue: #00a9ba;
   padding-top: 45vh;
 }
 
-// Remove outside margins
-.container-fluid {
-  margin: 0 -15px;
+.reach-hearts-logo-background {
+  display: table;
+  vertical-align: middle;
 }
 
-.accent-background {
-  background-color: $accent-background-color;
+.reach-hearts-logo-container {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  img {
+    width: 60%;
+    max-width: 460px;
+  }
+}
+
+.section-text {
+  margin-top: 40vh;
+  margin-bottom: 50vh;
+  h2 {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 23px;
+  }
+  h3 {
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form-area {
+  h2 {
+    font-size: 48px;
+    color: $red;
+  }
+  .btn {
+    width: 200px;
+  }
 }
 
 .jagged-common {
   height: 10vw;
-  margin: 0 -15px;
   background-size: 100% 100%;
 }
 
@@ -94,51 +151,79 @@ $blue: #00a9ba;
   background-image: url('../images/jagged-bottom-out-right.svg');
 }
 
-.dark-background {
-  background-color: $dark-gray;
-}
-
-.row.margin-bottom {
-  margin: (.5 * $standard-row-spacing) 0;
-}
-
-.pinnable-area {
-  position: relative;
-  max-height: 457px;
-}
-
-#hero {
-  .row {
-    height:100%;
+@media (min-width: 1200px) {
+  .container {
+    width: 810px;
   }
 }
 
-
-#content-sections {
-  .sections-text-area {
-    .section-text {
-      opacity: 0;
-      margin-top: 40vh;
-      margin-bottom: 50vh;
-      &:last-child {
-        margin-bottom: 10vh;
+@media(max-width: 991px) {
+  .nav {
+    li {
+      a {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   }
 }
 
-.form-introduction-text {
-  font-size: 80px;
-  color: $red;
-}
+@media(max-width: 768px) {
 
-.scene-image {
-  opacity: 0;
-}
+  .navbar-collapse {
+    background: $dark-gray;
+    text-align: left;
+    ul li a {
+      padding: 20px;
+    }
+  }
 
-@media (max-width: 991px) {
+  .navbar-center {
+    padding: 0;
+    height: 45px;
+  }
+
+  .main-container {
+    padding-top: 45px;
+  }
+
+  .navbar-brand {
+    opacity: 1;
+    margin: 15px 20px 0 20px;
+    padding: 0;
+    height: auto;
+    img {
+      height: 25px;
+    }
+  }
+
+  .navbar-toggle {
+    margin-right: 10px;
+    .icon-bar {
+      background: white;
+    }
+  }
+
+  .accent-background {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .reach-hearts-logo-container {
+    height: auto;
+  }
+
   .scene-image {
     opacity: 1;
+  }
+
+  .pinnable-area {
+    max-height: auto;
+    min-height: auto;
+  }
+
+  .hero-outer, .hero-inner {
+    height: auto;
   }
 
   .hero-contents {
@@ -151,28 +236,16 @@ $blue: #00a9ba;
   }
 
   .sections-text-area {
-    .show-mobile {
-      opacity: 1 !important;
-
-      img {
-        padding-bottom: 2vw;
-      }
+    .section-image {
+      opacity: 1;
+      margin: 0 auto;
+      padding: 2vw;
+      width: 35%;
     }
-
     .section-text {
-      margin-top: 10vw !important;
-      margin-bottom: 10vw !important;
+      margin: 0;
+      padding-top: 10vw;
+      padding-bottom: 10vw;
     }
   }
-}
-
-// type
-
-h2 {
-  color: $blue;
-  text-transform: uppercase;
-}
-
-h3 {
-  color: $red;
 }
