@@ -1,5 +1,5 @@
-@import "variables.scss";
-@import "form.scss";
+@import "_variables.scss";
+@import "_form.scss";
 
 body {
   font-family: 'Muli', sans-serif;
@@ -46,21 +46,19 @@ h3, h4, h5, h6 {
         color: $red;
         background: transparent;
         text-transform: uppercase;
-        &.active {
-          color: white;
-          text-decoration: none;
-        }
       }
       li {
         padding-right: 40px;
         vertical-align: middle;
+        &.active {
+          a {
+            color: white;
+            text-decoration: none;
+          }
+        }
       }
     }
   }
-}
-
-.main-container {
-  // padding-top: $navbar-height;
 }
 
 .accent-background {
@@ -70,24 +68,16 @@ h3, h4, h5, h6 {
   width: 100%;
 }
 
-.hero-outer {
-  height: 80vmin;
-}
-
 .hero-area {
-  height: 80vmin;
+  padding-top: $navbar-height;
 }
 
-.hero-contents {
-  padding-top: 45vh;
-}
-
-.reach-hearts-logo-background {
+.main-logo-background {
   display: table;
   vertical-align: middle;
 }
 
-.reach-hearts-logo-container {
+.main-logo-container {
   display: table-cell;
   width: 100%;
   height: 100%;
@@ -99,8 +89,6 @@ h3, h4, h5, h6 {
 }
 
 .section-text {
-  margin-top: 40vh;
-  margin-bottom: 50vh;
   h2 {
     margin: 0 0 5px 0;
     padding: 0;
@@ -124,6 +112,35 @@ h3, h4, h5, h6 {
   .btn {
     width: 200px;
   }
+}
+
+.pinnable-area {
+  max-height: auto;
+  min-height: auto;
+  height: 100%;
+  display: table;
+}
+
+.pinnable-area-content {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.full-screen {
+  height: 100%; /* makes panels the entire window height */
+}
+
+.section-image {
+  opacity: 0;
+}
+
+.section-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: $navbar-height;
 }
 
 .jagged-common {
@@ -165,6 +182,12 @@ h3, h4, h5, h6 {
         padding-right: 0;
       }
     }
+  }
+  .section-text {
+    margin: 0;
+    height: auto;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
   }
 }
 
@@ -217,11 +240,6 @@ h3, h4, h5, h6 {
     opacity: 1;
   }
 
-  .pinnable-area {
-    max-height: auto;
-    min-height: auto;
-  }
-
   .hero-outer, .hero-inner {
     height: auto;
   }
@@ -235,17 +253,7 @@ h3, h4, h5, h6 {
     }
   }
 
-  .sections-text-area {
-    .section-image {
-      opacity: 1;
-      margin: 0 auto;
-      padding: 2vw;
-      width: 35%;
-    }
-    .section-text {
-      margin: 0;
-      padding-top: 10vw;
-      padding-bottom: 10vw;
-    }
+  .section-image {
+    opacity: 1;
   }
 }

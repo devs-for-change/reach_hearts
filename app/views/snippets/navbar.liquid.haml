@@ -9,9 +9,9 @@
         %span.icon-bar
       %a.navbar-brand.visible-xs{ :href => "#top" }
         %img.img-responsive{ src: "{{ 'icons/reach-hearts-icon.svg' | theme_image_url }}" }
-    #navbar-collapse.collapse.navbar-collapse
-      .navbar-inner
-        %ul.nav.navbar-nav
+    #navbar-collapse.collapse.navbar-collapse.no-transition
+      #main-navbar.navbar-inner
+        %ul.nav.navbar-nav{ role: "tablist" }
           %li.hidden-xs
             %a.scrollspyable#nav-logo{ :href => "#top" }
               %img.img-responsive{ src: "{{ 'icons/reach-hearts-icon.svg' | theme_image_url }}" }
