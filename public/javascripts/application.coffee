@@ -1,24 +1,35 @@
 $ ->
-  window.controller = new ScrollMagic.Controller()
-
-  controller.scrollTo (newpos) ->
-    newpos += $(window).height()
-    TweenMax.to window, 0.5, scrollTo: y: newpos
-
-  $(document).on 'click', 'a[href^=\'#\']', (e) ->
-    id = $(this).attr('href')
-    items = $(id)
-    if items.length > 0
-      e.preventDefault()
-      controller.scrollTo id 
-      if window.history and window.history.pushState
-        history.pushState '', document.title, id
-
-  $('.navbar').on 'click', '.collapse.in a', ->
-    $('.navbar-toggle').click()
 
   smMin = 768
   pinned = false
+
+  controller = new ScrollMagic.Controller()
+
+  $(document).on 'click', 'a[href^=\'#\']', (e) ->
+    id = $(this).attr 'href'
+    if window.history and window.history.pushState
+      history.pushState '', document.title, id
+    item = $(id)
+    if item.length > 0
+      e.preventDefault()
+      position = item.eq(0).offset().top
+    parent = $(item).parent().parent()
+    if pinned && parent.hasClass('pinnable-slide')
+      pos = parent.offset().top + ($(window).height())
+    else
+      pos = $(item).offset().top
+    $("html,body").animate
+      scrollTop: pos,
+      duration: 500
+
+  $('.navbar-toggle').on 'click', (e) ->
+    e.stopPropagation()
+    expanded = ($(this).attr('aria-expanded') is "true")
+    $(this).attr 'aria-expanded', String !expanded
+    $('.navbar-collapse').toggleClass('in')
+
+  $('.navbar').on 'click', '.collapse.in a', ->
+    $('.navbar-toggle').click()
 
   # set up scenes
   scenes = []
@@ -39,27 +50,28 @@ $ ->
       pinned = false
       scenes.forEach (scene) ->
         el = $(scene.triggerElement())
-        slideImage = $(el).find("img").eq(0)
+        slideImage = $(el).find('img').eq(0)
         firstChild = $(el).children()[0]
         scene.removePin true
         scene.removeTween true
-        slideImage.css("opacity", "1")
+        slideImage.css 'opacity', '1'
     else if ($(window).width() >= smMin && !pinned)
       pinned = true
       scenes.forEach (scene) ->
         el = $(scene.triggerElement())
-        slideImage = $(el).find("img").eq(0)
+        slideImage = $(el).find('img').eq(0)
         firstChild = $(el).children()[0]
-        scene.duration($(window).height())
-        scene.setPin(firstChild)
+        scene.duration $(window).height() * 2
+        scene.setPin firstChild
         if (slideImage)
-          tween = TweenMax.fromTo(slideImage, 1, {
-            opacity: 0
-          }, {
-            opacity: 1,
-            immediateRender: true
-          })
+          tween = TweenMax.fromTo slideImage, 1, { opacity: 0 }, opacity: 1
           scene.setTween tween
 
   updateScenes()
   $(window).on 'resize', updateScenes
+
+  $(window).on 'scroll', ->
+    if ($('body').scrollTop() >= $('#top').offset().top + $('#top').height())
+        $('#nav-logo').addClass('active')
+    else
+        $('#nav-logo').removeClass('active')

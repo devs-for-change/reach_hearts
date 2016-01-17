@@ -11,7 +11,7 @@ is_layout: false
   %body{ "data-spy" => "scroll", "data-target" => "#main-navbar" }
     {% include navbar %}
     .main-container
-      #top
+      #top.top-section
         #hero.hero-outer
           .hero-area.accent-background.main-logo-background
             .main-logo-container
@@ -21,7 +21,7 @@ is_layout: false
         #about-us-trigger.pinnable-slide.container
           #about-us.section-text.show-mobile
             .row
-              .col-xs-8.col-xs-offset-2.col-sm-6.col-sm-offset-0
+              .col-xs-6.col-xs-offset-3.col-sm-6.col-sm-offset-0
                 %img.center-block.section-image.img-responsive{ src: "{{ 'icons/about-us-icon.svg' | theme_image_url }}" }
               .col-xs-12.col-sm-6
                 %h2 About Us
@@ -31,7 +31,7 @@ is_layout: false
         #new-media-trigger.pinnable-slide.container
           #new-media.section-text.show-mobile
             .row
-              .col-xs-8.col-xs-offset-2.col-sm-6.col-sm-offset-0
+              .col-xs-6.col-xs-offset-3.col-sm-6.col-sm-offset-0
                 %img.center-block.section-image.img-responsive{ src: "{{ 'icons/new-media-icon.svg' | theme_image_url }}" }
               .col-xs-12.col-sm-6
                 %h2 New Media
@@ -42,7 +42,7 @@ is_layout: false
         #big-data-trigger.pinnable-slide.container
           #big-data.section-text.show-mobile
             .row
-              .col-xs-8.col-xs-offset-2.col-sm-6.col-sm-offset-0
+              .col-xs-6.col-xs-offset-3.col-sm-6.col-sm-offset-0
                 %img.center-block.section-image.img-responsive{ src: "{{ 'icons/big-data-icon.svg' | theme_image_url }}" }
               .col-xs-12.col-sm-6
                 %h2 Big Data
@@ -50,14 +50,15 @@ is_layout: false
                 %p Make meaningful and measurable connections to the nonprofit sector with Reach Hearts
                 %p Along with giving your business positive free press and the free promotion associated with good PR, working with Reach Hearts will also make you feel good, know- ing that you are donating your time and expertise to a good cause.
                 %p We know that at times half the battle of offering pro bono services is finding that right nonprofit to work with. And when you are already donating time, who wants to waste time finding the right place to donate? Join Reach Hearts and let us match you up with a non- profit that has big data needs and then we will match you up to one of our new media connections to round out the promotional opportunities for the nonprofits that come through our door.
-        #contact
-          .accent-background
-            .container.form-area
-              .row
-                .col-xs-12.col-md-5
-                  %h2.form-introduction-text Let's get in touch
-                .col-xs-12.col-sm-6.col-md-offset-1
-                  {% include contact-form %}
-          .jagged-bottom-out-left.dark-background
+        .jagged-top-in-left
+        #contact.contact-form-container
+          .container.contact-form
+            .row
+              .col-xs-12.col-md-5
+                %h2.contact-form-introduction Let's get in touch
+              .col-xs-12.col-md-6.col-md-offset-1
+                {% include contact-form %}
+        .jagged-bottom-out-left.dark-background
+        .dark-background-spacer
 
   {% include javascripts %}
