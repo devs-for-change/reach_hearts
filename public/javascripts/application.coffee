@@ -1,134 +1,77 @@
 $ ->
-  setup_scroll_effect = ->
-    if $(window).width() > 991
-      # This defines the fade and pin effect for the template.
-      #  Pin the main area, including the first image to roughly middle
-      #  Fade in the areas, pinning when they reach 100% opacity.
-      #  Pin the areas for pin_hold_duration
-      #  After pin_hold_duration expires, fade back out, and repeat on next section.
 
-      controller = new ScrollMagic.Controller({addIndicators: true})
+  smMin = 768
+  pinned = false
 
-      $('.sections-text-area .section-text').each ->
-        $element = $(this)
+  controller = new ScrollMagic.Controller()
 
-        id = $element.attr('id') # Fade tween target ID, text area target.
-        trigger_id = "trigger-#{id}" # The trigger ID for fade/pin
+  $(document).on 'click', 'a[href^=\'#\']', (e) ->
+    id = $(this).attr 'href'
+    if window.history and window.history.pushState
+      history.pushState '', document.title, id
+    item = $(id)
+    if item.length > 0
+      e.preventDefault()
+      position = item.eq(0).offset().top
+    parent = $(item).parent().parent()
+    if pinned && parent.hasClass('pinnable-slide')
+      pos = parent.offset().top + ($(window).height())
+    else
+      pos = $(item).offset().top
+    $("html,body").animate
+      scrollTop: pos,
+      duration: 500
 
-        $menu_target = $(".nav > li > a[href=\"##{id}\"]")
-        $entire_menu = $(".nav > li > a")
+  $('.navbar-toggle').on 'click', (e) ->
+    e.stopPropagation()
+    expanded = ($(this).attr('aria-expanded') is "true")
+    $(this).attr 'aria-expanded', String !expanded
+    $('.navbar-collapse').toggleClass('in')
 
-        section_height = $element.height()
-        section_margin_top = parseInt($element.css('margin-top').replace('px',''))
-        section_margin_bottom = parseInt($element.css('margin-bottom').replace('px',''))
+  $('.navbar').on 'click', '.collapse.in a', ->
+    $('.navbar-toggle').click()
 
-        # insert trigger div directly before target ID, unless it already exists
-        $element.before("<div id='#{trigger_id}'>&nbsp;</div>") unless $("##{trigger_id}").length > 0
+  # set up scenes
+  scenes = []
+  $('.pinnable-slide').each ->
 
-        pin_offset = (section_margin_top + 70) + (.45 * section_height) # Magic numbers
-        fade_duration = 400 # Magic number.  Should be a percentage of VH?
-        pin_hold_duration = 1500 # Magic number, completely arbitrary.
+    child = $(this).children()[0]
+    scene = new (ScrollMagic.Scene)(
+      triggerElement: this
+      triggerHook: 0,
+      reverse: true
+    )
+    controller.addScene scene
+    scenes.push scene
 
-        content_in_offset = pin_offset - fade_duration
-        content_hold_offset = pin_offset
-        content_out_offset = pin_offset + pin_hold_duration
+  # update scenes to disable/enable pinning depending on screen size
+  updateScenes = ->
+    if ($(window).width() < smMin && pinned)
+      pinned = false
+      scenes.forEach (scene) ->
+        el = $(scene.triggerElement())
+        slideImage = $(el).find('img').eq(0)
+        firstChild = $(el).children()[0]
+        scene.removePin true
+        scene.removeTween true
+        slideImage.css 'opacity', '1'
+    else if ($(window).width() >= smMin && !pinned)
+      pinned = true
+      scenes.forEach (scene) ->
+        el = $(scene.triggerElement())
+        slideImage = $(el).find('img').eq(0)
+        firstChild = $(el).children()[0]
+        scene.duration $(window).height() * 2
+        scene.setPin firstChild
+        if (slideImage)
+          tween = TweenMax.fromTo slideImage, 1, { opacity: 0 }, opacity: 1
+          scene.setTween tween
 
-        tween_in = TweenMax.to("##{id}", 1, { opacity: 1})
-        tween_out = TweenMax.to("##{id}", 1, { opacity: 0})
+  updateScenes()
+  $(window).on 'resize', updateScenes
 
-        content_in = new (ScrollMagic.Scene)(
-          triggerElement: "##{trigger_id}"
-          offset: content_in_offset
-          duration: fade_duration)
-            .setTween(tween_in)
-            .addTo(controller)
-
-        content_hold = new (ScrollMagic.Scene)(
-          triggerElement: "##{trigger_id}"
-          offset: content_hold_offset
-          duration: pin_hold_duration)
-            .setPin("##{id}")
-            .addTo(controller)
-
-        scroll_spy = new (ScrollMagic.Scene)(triggerElement: "##{trigger_id}", duration: (pin_hold_duration + fade_duration*2))
-          .on 'enter', ->
-            $entire_menu.each ->
-              $(this).removeClass('active')
-            $menu_target.addClass('active')
-          .addTo(controller)
-
-        image_swap = new (ScrollMagic.Scene)(
-          triggerElement: "##{trigger_id}"
-          offset: content_hold_offset
-          duration: pin_hold_duration)
-            .on 'enter', ->
-              swap_scene_image_in($element)
-            .on 'leave', ->
-              swap_scene_image_out($element)
-            .addTo(controller)
-
-        content_out = new (ScrollMagic.Scene)(
-          triggerElement: "##{trigger_id}"
-          offset: content_out_offset
-          duration: fade_duration)
-            .setTween(tween_out)
-            .on 'leave', ->
-              stop_swap_animations($element)
-            .addTo(controller)
-
-      # Duration to allow all sections to be scrolled.
-      main_pinnable_area_duration = $('.sections-text-area').height() + 300
-
-      # Pin the changing image area to the left.
-      pinnable_area = new (ScrollMagic.Scene)(
-        triggerElement: '#sections-trigger'
-        offset: '200%'
-        duration: main_pinnable_area_duration)
-          .setPin('.pinnable-area')
-          .on 'enter', (e) ->
-            set_nav_logo_opacity_to(1)
-          .on 'leave', (e) -> # Only run this if we're leaving to go to the top.
-            if e.state == 'BEFORE'
-              set_nav_logo_opacity_to(0)
-          .addIndicators(name: "MAIN PIN")
-          .addTo(controller)
-
-      # Set up scroll spy for other areas
-      $.each ['#contact', '#top'], (ele, id) ->
-        duration = $(id).height()
-        contact_scroll_spy = new (ScrollMagic.Scene)(triggerElement: "#{id}", duration: duration)
-          .on 'enter', ->
-            $(".nav > li > a").each ->
-              $(this).removeClass('active')
-            $("li > a[href=\"#{id}\"]").addClass('active')
-            console.log(id)
-          .addIndicators(name: "SCROLLSPY #{id}")
-          .addTo(controller)
-
-  swap_scene_image_in = ($element) ->
-    $target = $('.section-image-target')
-    src = $element.find('.section-image').attr('src')
-    $target.attr('src', src)
-    $target.stop().fadeIn 500
-
-  swap_scene_image_out = ($element) ->
-    $target = $('.section-image-target')
-    $target.stop().fadeOut 500
-
-  stop_swap_animations = ($element) ->
-    $target = $('.section-image-target')
-    $target.stop().hide()
-
-  set_nav_logo_opacity_to = (value) ->
-    $target = $('#nav-logo')
-    $target.animate({ opacity: value })
-
-  #now, initialize everything, and set up a resize reloader.
-  setup_scroll_effect()
-
-  width = $(window).width()
-  height = $(window).height()
-
-  $(window).resize ->
-    if($(window).width() != width && $(window).height() != height)
-      location.reload()
+  $(window).on 'scroll', ->
+    if ($('body').scrollTop() >= $('#top').offset().top + $('#top').height())
+        $('#nav-logo').addClass('active')
+    else
+        $('#nav-logo').removeClass('active')

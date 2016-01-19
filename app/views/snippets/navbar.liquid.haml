@@ -1,5 +1,5 @@
 %nav.navbar.navbar-fixed-top.navbar-center
-  .container-fluid
+  .container
     / Brand and toggle get grouped for better mobile display
     .navbar-header
       %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#navbar-collapse", "data-toggle" => "collapse", :type => "button"}
@@ -7,16 +7,16 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      / %a.navbar-brand{:href => "#"} Brand
-    / Collect the nav links, forms, and other content for toggling
-    #navbar-collapse.collapse.navbar-collapse
-      .navbar-inner
-        %ul.nav.navbar-nav{style: 'text-align: center;'}
-          %li
+      %a.navbar-brand.visible-xs{ :href => "#top" }
+        %img.img-responsive{ src: "{{ 'icons/reach-hearts-icon.svg' | theme_image_url }}" }
+    #navbar-collapse.collapse.navbar-collapse.no-transition
+      #main-navbar.navbar-inner
+        %ul.nav.navbar-nav{ role: "tablist" }
+          %li.hidden-xs
             %a.scrollspyable#nav-logo{ :href => "#top" }
               %img.img-responsive{ src: "{{ 'icons/reach-hearts-icon.svg' | theme_image_url }}" }
           %li
-            %a.scrollspyable{ :href => "#top" } Home
+            %a.scrollspyable.active{ :href => "#top" } Home
           %li
             %a.scrollspyable{ :href => "#about-us" } About Us
           %li
