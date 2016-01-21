@@ -17,11 +17,9 @@
               %img.img-responsive{ src: "{{ 'icons/reach-hearts-icon.svg' | theme_image_url }}" }
           %li
             %a.scrollspyable.active{ :href => "#top" } Home
+          {% for section in contents.sections %}
           %li
-            %a.scrollspyable{ :href => "#about-us" } About Us
-          %li
-            %a.scrollspyable{ :href => "#new-media" } New Media
-          %li
-            %a.scrollspyable{ :href => "#big-data" } Big Data
+            %a.scrollspyable{ :href => '#{{ section._slug }}' } {{ section.title }}
+          {% endfor %}
           %li
             %a.scrollspyable{ :href => "#contact" } Contact
