@@ -24,7 +24,7 @@ fields:
     required: false
     hint: Body that appears next to the image
     localized: false
-    text_formatting: text
+    text_formatting: html
 
 - image:
     label: Image
