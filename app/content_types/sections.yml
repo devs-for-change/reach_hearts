@@ -1,11 +1,11 @@
 # Human readable name of this type
-name: Content section
+name: Content Section
 
 # Lowercase, underscored handle used to access this type
-slug: content_section
+slug: sections
 
 # Explanatory text displayed in the back-office
-description: A description of the content type for the editors
+description: Content sections for the home page
 
 # Slug of field used to identify entries by default, such as the title
 label_field_name: title
