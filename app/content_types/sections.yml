@@ -1,0 +1,34 @@
+name: Content Section
+slug: sections
+description: Content sections for the home page
+label_field_name: title
+order_by: manually
+fields:
+- title:
+    label: Title
+    type: string
+    required: true
+    hint: First bigger section line
+    localized: false
+
+- subtitle:
+    label: Subtitle
+    type: string
+    required: false
+    hint: Second smaller section line
+    localized: false
+
+- body:
+    label: Body
+    type: text
+    required: false
+    hint: Body that appears next to the image
+    localized: false
+    text_formatting: html
+
+- image:
+    label: Image
+    type: file
+    required: false
+    hint: Image next to the body text, fades in.
+    localized: false
