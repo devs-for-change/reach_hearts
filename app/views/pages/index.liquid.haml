@@ -18,6 +18,8 @@ is_layout: false
               {% capture hero-caption %}{% editable_text "hero-caption", format: "raw", rows: 1, hint: "Image alt tag text (for screen readers)." %}Reach Hearts{% endeditable_text %}{% endcapture %}
               {% capture hero-image %}{% editable_file "hero-image" %}/samples/pages/reach-hearts-logo.svg{% endeditable_file %}{% endcapture %}
               %img.center-block{ src: "{{ hero-image}}", alt: "{{ hero-caption }}" }
+              #contact-success.hidden
+                %h2.message Thanks for contacting us!
           .jagged-bottom-out-left
       #sections-trigger.full-screen
         {% for section in contents.sections %}

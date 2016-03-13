@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     RedCloth (4.2.9)
-    activesupport (4.2.5)
+    activesupport (4.2.6)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -32,7 +32,7 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    concurrent-ruby (1.0.0)
+    concurrent-ruby (1.0.1)
     crass (1.0.2)
     daemons (1.2.3)
     dragonfly (1.0.12)
@@ -56,9 +56,9 @@ GEM
     i18n (0.7.0)
     json (1.8.3)
     kramdown (1.9.0)
-    listen (3.0.5)
+    listen (3.0.6)
       rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
+      rb-inotify (>= 0.9.7)
     locomotivecms-liquid (4.0.0)
     locomotivecms-solid (4.0.1)
       locomotivecms-liquid (~> 4.0.0)
@@ -71,7 +71,7 @@ GEM
       attr_extras (~> 4.4.0)
       colorize
       stringex (~> 2.5.2)
-    locomotivecms_steam (1.0.0)
+    locomotivecms_steam (1.0.1)
       RedCloth (~> 4.2.9)
       autoprefixer-rails (~> 6.2.3)
       chronic (~> 0.10.2)
@@ -87,19 +87,19 @@ GEM
       mimetype-fu (~> 0.1.2)
       moneta (~> 0.8.0)
       morphine (~> 0.1.1)
-      nokogiri (~> 1.6.7.1)
+      nokogiri (~> 1.6.7.2)
       rack-cache (~> 1.2)
       rack-rewrite (~> 1.5.1)
       rack_csrf (~> 2.5.0)
       sanitize (~> 4.0.1)
       sass (~> 3.4.21)
       sprockets (~> 3.5.2)
-    locomotivecms_wagon (2.0.0)
+    locomotivecms_wagon (2.0.1)
       faker (~> 1.4.3)
       listen (~> 3.0.4)
       locomotivecms_coal (~> 1.0.0)
       locomotivecms_common (~> 0.0.5)
-      locomotivecms_steam (~> 1.0.0)
+      locomotivecms_steam (~> 1.0.1)
       netrc (~> 0.10.3)
       rack-livereload (~> 0.3.16)
       rubyzip (~> 1.1.7)
@@ -109,7 +109,7 @@ GEM
     mime-types (2.6.2)
     mimetype-fu (0.1.2)
     mini_portile2 (2.0.0)
-    minitest (5.8.3)
+    minitest (5.8.4)
     moneta (0.8.0)
     morphine (0.1.1)
     multi_json (1.11.2)
@@ -121,7 +121,7 @@ GEM
     nokogumbo (1.4.7)
       nokogiri
     rack (1.6.4)
-    rack-cache (1.5.1)
+    rack-cache (1.6.1)
       rack (>= 0.4)
     rack-livereload (0.3.16)
       rack
@@ -129,7 +129,7 @@ GEM
     rack_csrf (2.5.0)
       rack (>= 1.1.0)
     rb-fsevent (0.9.7)
-    rb-inotify (0.9.5)
+    rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     rubyzip (1.1.7)
     sanitize (4.0.1)
@@ -156,7 +156,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  locomotivecms_wagon (= 2.0.0)
+  locomotivecms_wagon (~> 2)
 
 BUNDLED WITH
    1.10.6

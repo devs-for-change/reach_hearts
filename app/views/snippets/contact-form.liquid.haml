@@ -1,15 +1,29 @@
-%form.form{ role: :form }
-  .row
-    .form-group.col-xs-12
-      %input.form-control#business_name{ type: :text, placeholder: 'Business Name' }
-  .row
-    .form-group.col-xs-12
-      %input.form-control#first_name{ type: :text, placeholder: 'Contact First Name' }
-    .form-group.col-xs-12
-      %input.form-control#last_name{ type: :text, placeholder: 'Contact Last Name' }
-  .row
-    .form-group.col-xs-12
-      %textarea.form-control#extra{ rows: 5, placeholder: 'Anything else we should know...' }
-  .row
-    .form-group.col-xs-12
-      %button.btn.btn-default.contact-form-submit{ type: :submit }Send
+{% model_form 'contacts', class: 'form', success: '/#contact-success', error: '/' %}
+
+{% if contact.errors %}
+#errors
+  %p The following errors occured
+  %ul
+    {% for error in contact.errors %}
+    %li {{error[0] | capitalize}} -  {{error[1]}}
+    {% endfor %}
+{% endif %}
+.row
+  .form-group.col-xs-12
+    %input.form-control#contact_business_name{ value: "{{contact.business_name}}", name: 'content[business_name]', type: :text, placeholder: 'Business Name' }
+.row
+  .form-group.col-xs-12
+    %input.form-control#contact_first_name{ value: "{{contact.first_name}}", name: 'content[first_name]', type: :text, placeholder: 'Contact First Name' }
+.row
+  .form-group.col-xs-12
+    %input.form-control#contact_last_name{ value: "{{contact.last_name}}", name: 'content[last_name]', type: :text, placeholder: 'Contact Last Name' }
+.row
+  .form-group.col-xs-12
+    %input.form-control#contact_email{ value: "{{contact.email}}", name: 'content[email]', type: :text, placeholder: 'Email' }
+.row
+  .form-group.col-xs-12
+    %textarea.form-control#contact_comments{ value: "{{contact.comments}}", name: 'content[comments]', rows: 5, placeholder: 'Anything else we should know...' }
+.row
+  .form-group.col-xs-12
+    %button.btn.btn-default.contact-form-submit{ type: :submit }Send
+{% endmodel_form %}
