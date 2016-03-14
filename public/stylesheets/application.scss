@@ -24,14 +24,10 @@ h3, h4, h5, h6 {
 }
 
 #nav-logo {
-  opacity: 0;
+  display: none;
   padding: 0;
-  display: inline-block;
-  transition: all 1s;
-  pointer-events: none;
   &.active {
-    opacity: 1;
-    pointer-events: auto;
+    display: inline-block;
   }
   img {
     margin-top: -3px;
@@ -71,7 +67,7 @@ h3, h4, h5, h6 {
 
 .hero-area {
   background: $accent-background-color;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   margin-bottom: -5vw;
   &:after {
@@ -90,7 +86,7 @@ h3, h4, h5, h6 {
 .main-logo-container {
   display: table-cell;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   vertical-align: middle;
   img {
     width: 60%;
@@ -131,7 +127,7 @@ h3, h4, h5, h6 {
 }
 
 .full-screen {
-  height: 100%;
+  height: 100vh;
 }
 
 .section-text {
@@ -141,7 +137,7 @@ h3, h4, h5, h6 {
   -webkit-justify-content: center;
   align-items: center;
   -webkit-align-items: center;
-  height: 100%;
+  min-height: 100vh;
   padding-top: $navbar-md-height;
 }
 
