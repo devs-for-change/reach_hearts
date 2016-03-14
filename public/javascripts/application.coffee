@@ -1,5 +1,12 @@
 $ ->
 
+  if $('#errors').length > 0
+    $('html, body').animate
+      scrollTop: $('#errors').offset().top,
+      duration: 500
+  if /contact-success/.test(window.location.hash)
+    $('#contact-success').removeClass('hidden')
+
   smMin = 768
   pinned = false
 
@@ -18,13 +25,13 @@ $ ->
       pos = parent.offset().top + ($(window).height())
     else
       pos = $(item).offset().top
-    $("html,body").animate
+    $('html,body').animate
       scrollTop: pos,
       duration: 500
 
   $('.navbar-toggle').on 'click', (e) ->
     e.stopPropagation()
-    expanded = ($(this).attr('aria-expanded') is "true")
+    expanded = ($(this).attr('aria-expanded') is 'true')
     $(this).attr 'aria-expanded', String !expanded
     $('.navbar-collapse').toggleClass('in')
 
@@ -72,6 +79,6 @@ $ ->
 
   $(window).on 'scroll', ->
     if ($('body').scrollTop() >= $('#top').offset().top + $('#top').height())
-        $('#nav-logo').addClass('active')
+      $('#nav-logo').addClass('active')
     else
-        $('#nav-logo').removeClass('active')
+      $('#nav-logo').removeClass('active')
