@@ -1,11 +1,18 @@
 @import "_variables.scss";
 @import "_form.scss";
 
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
 body {
   font-family: 'Muli', sans-serif;
   font-size: 12px;
   padding-bottom: 20px;
   background-color: white;
+  overflow: auto;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -88,10 +95,15 @@ h3, h4, h5, h6 {
 }
 
 .main-logo-container {
-  display: table-cell;
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   img {
     width: 60%;
     max-width: 460px;
